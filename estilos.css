@@ -1,23 +1,8 @@
+/* Ajustes Globais */
 * {
     margin: 0;
     padding: 0;
-}
-
-.cabecalho { 
-  background-color: #7e3e1c; 
-  padding: 15px 25px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-} 
-
-.cartao {
-    width: 260px;
-    height: 200px;
-}
-
-.cartao-imagem {
-    width: 100%;
+    box-sizing: border-border-box; /* Garante que padding/bordas não quebrem o tamanho */
 }
 
 body {
@@ -25,14 +10,16 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: #f5f2f2;
+    font-family: sans-serif;
 }
 
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.cabecalho { 
+    background-color: #7e3e1c; 
+    padding: 15px 25px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+} 
 
 .cabecalho-link {
     color: #fff;
@@ -44,34 +31,79 @@ h1 {
     font-size: 24px;
 }
 
-footer {
-    background-color: #7e3e1c;
-    padding: 15px 25px; 
-    color: #fff;
-}
-
-.cartao-interno {
-    position: relative;
-    transition: transform 0.8s;
-}
-
-.cartao:hover .cartao-interno {
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;
-}
-
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    backface-visibility: hidden;
-}
-
-.cartao-verso {
-    transform: rotateY(180deg);
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
 }
 
 section {
     display: flex;
-    gap: 16px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --- EFEITO FLIP DOS CARTÕES --- */
+
+.cartao {
+    width: 260px;
+    height: 380px; /* Aumentado ligeiramente para caber melhor a imagem e o texto */
+    perspective: 1000px; /* Adiciona a perspectiva 3D necessária para o efeito */
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; /* OBRIGATÓRIO estar aqui no elemento base */
+}
+
+/* Aplica o giro ao passar o mouse */
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden; /* Esconde o lado oposto quando girado */
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cartao-verso {
+    transform: rotateY(180deg);
+    background-color: #e3dede;
+}
+
+/* Ajuste da Imagem e Textos */
+.cartao-imagem {
+    width: 100%;
+    height: 70%;
+    object-fit: cover; /* Recorta suavemente a imagem para caber sem distorcer */
+}
+
+.cartao p {
+    padding: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+    background-color: #7e3e1c;
+    padding: 15px 25px; 
+    color: #fff;
+    text-align: center;
 }
