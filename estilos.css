@@ -4,7 +4,7 @@
 }
 
 .cabecalho { 
-  background-color: #dde009; 
+  background-color: #7e3e1c; 
   padding: 15px 25px; 
   display: flex; 
   justify-content: space-between; 
@@ -45,7 +45,7 @@ h1 {
 }
 
 footer {
-    background-color: #d4520b;
+    background-color: #7e3e1c;
     padding: 15px 25px; 
     color: #fff;
 }
