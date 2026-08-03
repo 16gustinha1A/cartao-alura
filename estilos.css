@@ -75,7 +75,7 @@ section {
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     backface-visibility: hidden; /* Esconde o lado oposto quando girado */
-    background-color: #fff;
+    background-color: #0a0552;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ section {
 
 .cartao-verso {
     transform: rotateY(180deg);
-    background-color: #e3dede;
+    background-color: #0b8888;
 }
 
 /* Ajuste da Imagem e Textos */
@@ -102,7 +102,7 @@ section {
 }
 
 footer {
-    background-color: #7e3e1c;
+    background-color: #1e1ca3;
     padding: 15px 25px; 
     color: #fff;
     text-align: center;
