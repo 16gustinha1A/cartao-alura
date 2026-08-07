@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #0ac4ba;
+    background-color: #2e36a8;
     font-family: sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
 } 
 
 .cabecalho-link {
-    color: #0acf;
+    color: rgb(0, 37, 204);
     text-decoration: none; 
 }
 
